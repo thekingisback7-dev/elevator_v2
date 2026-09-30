@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>사업자 선정지침 전면개정 종합 가이드</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+    background-color: #F4F6F5;
+    color: #2D3748;
+    line-height: 1.45;
+    word-break: keep-all;
+    padding-bottom: 76px;
+  }
+  /* 모바일 웹 앱 컨테이너 */
+  .app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #F8FAF9;
+    min-height: 100vh;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.06);
+  }
+  /* 1. 상단 메인 헤더 */
+  .header-card {
+    background: linear-gradient(135deg, #1B4D2E 0%, #256E38 100%);
+    color: #FFFFFF;
+    padding: 22px 18px 24px 18px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    position: relative;
+    box-shadow: 0 6px 16px rgba(27, 77, 46, 0.2);
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFDE7;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(4px);
+  }
+  .header-title {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.32;
+    margin-bottom: 6px;
+    letter-spacing: -0.4px;
+  }
+  .header-sub {
+    font-size: 12.5px;
+    color: #C8E6C9;
+    margin-bottom: 14px;
+  }
+  .header-action-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .btn-copy-summary {
+    background-color: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #FFFFFF;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+  }
+  .btn-copy-summary:active {
+    background-color: #FBC02D;
+    color: #1B4D2E;
+    transform: scale(0.97);
+  }
+  /* 2. 네비게이션 탭 */
+  .tab-nav-wrapper {
+    padding: 12px 16px 4px 16px;
+    margin-top: -12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    z-index: 10;
+    position: relative;
+  }
+  .tab-nav-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .tab-group {
+    display: inline-flex;
+    gap: 8px;
+    padding-bottom: 6px;
+  }
+  .tab-btn {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    color: #4A5568;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
+  }
+  .tab-btn.active {
+    background-color: #1B4D2E;
+    color: #FFFFFF;
+    border-color: #1B4D2E;
+    box-shadow: 0 4px 10px rgba(27, 77, 46, 0.25);
+  }
+  /* 탭 콘텐츠 영역 */
+  .tab-content {
+    display: none;
+    padding: 12px 16px 20px 16px;
+  }
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.25s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* 알림 / 경고 배너 */
+  .alert-box {
+    background-color: #FFFDE7;
+    border: 1.5px solid #FBC02D;
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(251, 192, 45, 0.15);
+  }
+  .alert-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+  .alert-content h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #C62828;
+    margin-bottom: 3px;
+  }
+  .alert-content p {
+    font-size: 11.5px;
+    color: #424242;
+    line-height: 1.4;
+  }
+  /* 대시보드 카드 */
+  .dash-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 15px 16px;
+    margin-bottom: 14px;
+    border: 1px solid #E8ECE9;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+  }
+  .card-header-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #EEF2EF;
+  }
+  .card-header-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1B4D2E;
+  }
+  /* 2x2 사양 박스 그리드 */
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .spec-item {
+    background-color: #F8FAF9;
+    border-radius: 10px;
+    padding: 9px 11px;
+    border-left: 3.5px solid #2E7D32;
+  }
+  .spec-label {
+    font-size: 10.5px;
+    color: #718096;
+    margin-bottom: 3px;
+  }
+  .spec-value {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1B4D2E;
+    line-height: 1.3;
+  }
+  /* 체크리스트 */
+  .check-list-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.42;
+    color: #333333;
+  }
+  .check-icon-badge {
+    color: #2E7D32;
+    font-size: 14px;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .check-row strong {
+    color: #1B4D2E;
+  }
+  /* 신구 비교 테이블형 카드 */
+  .compare-row-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 9px;
+  }
+  .compare-topic {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1B4D2E;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .compare-topic .badge-num {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+  .compare-flow {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+  }
+  .flow-old {
+    background-color: #F1F3F4;
+    color: #757575;
+    padding: 3px 6px;
+    border-radius: 5px;
+    text-decoration: line-through;
+    flex: 1;
+    line-height: 1.3;
+  }
+  .flow-arrow {
+    color: #2E7D32;
+    font-weight: 900;
+  }
+  .flow-new {
+    background-color: #E8F5E9;
+    color: #1B4D2E;
+    font-weight: 800;
+    padding: 3px 6px;
+    border-radius: 5px;
+    flex: 1.2;
+    line-height: 1.3;
+  }
+  /* 인터랙티브 체크박스 카드 */
+  .interactive-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 9px 0;
+    border-bottom: 1px dashed #E2E8F0;
+    cursor: pointer;
+  }
+  .interactive-check-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .custom-checkbox {
+    width: 17px;
+    height: 17px;
+    border: 2px solid #2E7D32;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    background-color: #FFFFFF;
+    transition: all 0.2s;
+  }
+  .interactive-check-item.done .custom-checkbox {
+    background-color: #2E7D32;
+    color: #FFFFFF;
+  }
+  .interactive-check-item.done .custom-checkbox::after {
+    content: "✓";
+    font-size: 11px;
+    font-weight: 900;
+  }
+  .interactive-check-item.done .check-text {
+    color: #A0AEC0;
+    text-decoration: line-through;
+  }
+  .check-text {
+    font-size: 12px;
+    color: #2D3748;
+    line-height: 1.4;
+  }
+  /* 하단 고정 액션바 */
+  .bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    padding: 10px 16px;
+    display: flex;
+    gap: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+    z-index: 100;
+  }
+  .btn-print-action {
+    flex: 1;
+    background-color: #F8FAF9;
+    border: 1px solid #C8E6C9;
+    color: #1B4D2E;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 12px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-consult-action {
+    flex: 1.4;
+    background: linear-gradient(135deg, #1B4D2E 0%, #256E38 100%);
+    border: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 12px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 4px 10px rgba(27,77,46,0.3);
+  }
+  .btn-print-action:active, .btn-consult-action:active {
+    transform: scale(0.98);
+  }
+  /* 토스트 알림 */
+  .toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background-color: rgba(27, 77, 46, 0.95);
+    color: #FFFFFF;
+    padding: 9px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ========================================================
+     웹 화면용 인쇄 영역 초기 설정 (기본 숨김)
+  ======================================================== */
+  #print-area {
+    display: none;
+  }
+
+  /* ========================================================
+     ★ A4 1장 최적화 전문 인쇄 스타일 (@media print)
+  ======================================================== */
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm 10mm 12mm; /* 인쇄 안정 마진 설정 */
+    }
+    html, body {
+      background: #FFFFFF !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      font-size: 8.8pt !important;
+      line-height: 1.4 !important;
+      color: #1A202C !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    /* 모바일 웹 UI 전체 숨김 */
+    .app-container, .bottom-bar, .toast {
+      display: none !important;
+    }
+    /* 인쇄 전용 풀 컨테이너 노출 */
+    #print-area {
+      display: flex !important;
+      flex-direction: column;
+      width: 100% !important;
+      max-width: 186mm !important; /* A4 가로 실용영역 맞춤 */
+      margin: 0 auto !important;
+      box-sizing: border-box;
+    }
+    /* 인쇄 헤더 */
+    .p-header {
+      background: linear-gradient(135deg, #163E25 0%, #1E562C 100%) !important;
+      color: #FFFFFF !important;
+      padding: 12px 16px;
+      border-radius: 6px;
+      border-bottom: 3px solid #FBC02D !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .p-header-left {
+      display: flex;
+      flex-direction: column;
+    }
+    .p-badge {
+      font-size: 7.5pt; 
+      font-weight: 800; 
+      background: #FFFDE7 !important; 
+      color: #163E25 !important; 
+      display: inline-block; 
+      padding: 1px 6px; 
+      border-radius: 3px; 
+      margin-bottom: 4px;
+      align-self: flex-start;
+      border: 0.5px solid #FBC02D;
+    }
+    .p-header h1 {
+      font-size: 14pt;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+      margin-bottom: 2px;
+      line-height: 1.25;
+    }
+    .p-header p {
+      font-size: 8.5pt;
+      color: #E8F5E9 !important;
+    }
+    .p-header-right {
+      text-align: right;
+      font-size: 8pt;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #FFFDE7 !important;
+      border-left: 1px solid rgba(255,255,255,0.25);
+      padding-left: 12px;
+    }
+    /* 슬로건 배너 */
+    .p-slogan {
+      background-color: #FFFDF0 !important;
+      border: 1px solid #FBC02D !important;
+      border-radius: 5px;
+      padding: 7px 12px;
+      font-size: 8.8pt;
+      color: #2D3748 !important;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+    .p-slogan strong {
+      color: #163E25 !important;
+    }
+    /* 대분류 타이틀 */
+    .p-sec-head {
+      font-size: 9.5pt;
+      font-weight: 800;
+      color: #163E25 !important;
+      border-left: 3.5px solid #2E7D32 !important;
+      padding-left: 7px;
+      margin: 12px 0 6px 0;
+      letter-spacing: -0.2px;
+    }
+    /* 2열 레이아웃 그리드 */
+    .p-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    /* 공통 콘텐츠 박스 */
+    .p-box {
+      border: 1px solid #CBD5E0 !important;
+      background: #FCFDFD !important;
+      border-radius: 5px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .p-box-title {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #1A202C !important;
+      margin-bottom: 3px;
+    }
+    /* 칩 스타일 (구/신) */
+    .p-chip {
+      font-size: 8.2pt;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .p-chip-old {
+      background: #EDF2F7 !important;
+      color: #718096 !important;
+      text-decoration: line-through;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 7.8pt;
+    }
+    .p-chip-arrow {
+      color: #4A5568 !important;
+      font-weight: 800;
+    }
+    .p-chip-new {
+      background: #E6FFFA !important;
+      color: #0E6251 !important;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 3px;
+      border: 0.5px solid #B2DFDB;
+    }
+    /* 품질 사수 3대 기준 박스 */
+    .p-quality-box {
+      background: #F4FBF7 !important; 
+      border: 1px solid #A3D9C9 !important; 
+      border-radius: 5px; 
+      padding: 8px 12px; 
+      margin-bottom: 4px;
+    }
+    .p-quality-list {
+      list-style-type: none;
+    }
+    .p-quality-item {
+      font-size: 8.5pt;
+      color: #2D3748 !important;
+      line-height: 1.45;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .p-quality-item:last-child {
+      margin-bottom: 0;
+    }
+    .p-quality-icon {
+      color: #1E562C !important;
+      font-weight: bold;
+      margin-right: 6px;
+      font-size: 9pt;
+    }
+    .p-quality-text strong {
+      color: #163E25 !important;
+    }
+    /* 체크리스트 세부 서술 */
+    .p-desc-text {
+      font-size: 8pt;
+      color: #4A5568 !important;
+      line-height: 1.4;
+      margin-top: 2px;
+      padding-left: 12px;
+    }
+    /* 푸터 */
+    .p-footer {
+      border-top: 1px solid #E2E8F0 !important;
+      padding-top: 6px;
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      color: #718096 !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     1. 모바일 인터랙티브 웹 UI (.app-container)
+=========================================== -->
+<div class="app-container">
+  <!-- 상단 메인 헤더 카드 -->
+  <div class="header-card">
+    <span class="header-badge">공동주택 실무 컨설팅</span>
+    <h1 class="header-title">「사업자 선정지침」 전면개정<br>단지 실무 대응 종합 가이드</h1>
+    <p class="header-sub">국토교통부 전부개정안 | 2027. 1. 1. 시행 예정</p>
+    <div class="header-action-row">
+      <button class="btn-copy-summary" onclick="copySummaryText()">
+        <span>📋</span> 3줄 요약 복사
+      </button>
+    </div>
+  </div>
+
+  <!-- 가로 스크롤 탭 바 -->
+  <div class="tab-nav-wrapper">
+    <div class="tab-group">
+      <button class="tab-btn active" onclick="switchTab('overview', this)">
+        <span>📌</span> 한눈에 보기
+      </button>
+      <button class="tab-btn" onclick="switchTab('changes', this)">
+        <span>⚖️</span> 10대 핵심 변화
+      </button>
+      <button class="tab-btn" onclick="switchTab('quality', this)">
+        <span>🛡️</span> 승강기 품질 사수
+      </button>
+      <button class="tab-btn" onclick="switchTab('checklist', this)">
+        <span>📋</span> 관리소장 체크리스트
+      </button>
+    </div>
+  </div>
+
+  <!-- 탭 1: 한눈에 보기 -->
+  <div id="tab-overview" class="tab-content active">
+    <div class="alert-box">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-content">
+        <h4>수의계약 대폭 축소: 입찰 전면 의무화</h4>
+        <p>승강기·보험·홈네트워크 등 재계약 불가! 서류 징구 및 보증금 수납 확인 법적 책임이 <strong>발주처(소장·입대의)</strong>로 이전됩니다.</p>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <div class="card-header-row">
+        <span>🏢</span>
+        <span class="card-header-title">개정 개요 및 입찰 주요 기준</span>
+      </div>
+      <div class="grid-2x2">
+        <div class="spec-item">
+          <div class="spec-label">시행 예정일</div>
+          <div class="spec-value">2027. 1. 1. (공고분부터)</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">수의계약 대상</div>
+          <div class="spec-value">11개 ➔ 6개 축소</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">입찰 성립 요건</div>
+          <div class="spec-value">일률 2인 이상 유효</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">계약보증금 요율</div>
+          <div class="spec-value">일률 10% 이상 수납</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <div class="card-header-row">
+        <span>🎯</span>
+        <span class="card-header-title">입주자대표회의 핵심 의결 가이드</span>
+      </div>
+      <div class="check-list-group">
+        <div class="check-row">
+          <span class="check-icon-badge">✅</span>
+          <div><strong>용역 공백 방지:</strong> 승강기 등 2027년 만료 용역 전수조사 후 계약만료 45일 전 입찰 착수 캘린더 의결</div>
+        </div>
+        <div class="check-row">
+          <span class="check-icon-badge">✅</span>
+          <div><strong>서류 리스크 방어:</strong> '일단 받고 차후 보완' 전면 금지! 11종 제출서류 수령 즉시 체크리스트 작성</div>
+        </div>
+        <div class="check-row">
+          <span class="check-icon-badge">✅</span>
+          <div><strong>상한가 간소화 활용:</strong> 3개 견적·외부 자문 없이 단지 사업계획·예산 + 입대의 의결만으로 공고 상한가 확정</div>
+        </div>
+        <div class="check-row">
+          <span class="check-icon-badge">✅</span>
+          <div><strong>안전시설 품질 사수:</strong> 단순 최저가 탈피를 위해 정품 부품 확약 및 24시간 원격 관제 적격심사 배점 반영</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 탭 2: 10대 핵심 변화 (1~10번 전체) -->
+  <div id="tab-changes" class="tab-content">
+    <div class="dash-card">
+      <div class="card-header-row">
+        <span>⚖️</span>
+        <span class="card-header-title">선정지침 전부개정 10대 핵심 변화 (전체)</span>
+      </div>
+      <!-- 1 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>1. 수의계약 대상 대폭 축소</span>
+          <span class="badge-num">별표3</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">11개 항목 (용역 전반 재계약)</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">6개 축소 (보험·공산품·추가공사 삭제)</div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>2. 500만원 이하 소액 수의계약</span>
+          <span class="badge-num">간소화</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">견적서 2인 이상 징구 필수</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">견적 요건 삭제 (분할계약 금지 유지)</div>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>3. 기존 사업자 재계약 범위 축소</span>
+          <span class="badge-num">핵심</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">공사 제외 전 용역 재계약 가능</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">경비·청소 2종만 가능 (승강기 제외)</div>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>4. 입찰의 종류 단순화</span>
+          <span class="badge-num">제도</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">일반 / 제한 / 지명경쟁</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">지명경쟁 전면 폐지 (일반·제한만)</div>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>5. 입찰 성립요건 일률 완화</span>
+          <span class="badge-num">성립</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">일반 2인 / 제한 3인 이상</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">모든 경쟁입찰 일률 2인 이상 성립</div>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>6. 입찰가격 상한 공고 간소화</span>
+          <span class="badge-num">예산</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">3개 견적·지자체·전문가 자문</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">사업계획·예산 + 입대의 의결만으로 공고</div>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>7. 입찰가격 산출방법 발주처 직접 명시</span>
+          <span class="badge-num">주의</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">제20조·제28조 법정 명문 규정</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">조문 삭제 → 입찰공고문에 직접 명시 필수</div>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>8. 제출서류·보증금 관리 주체 전환</span>
+          <span class="badge-num">책임</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">"입찰자가 제출·납부한다"</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">"발주처가 징구·확인한다" (소장 책임)</div>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>9. 금품제공 등 부정행위 기준일 연장</span>
+          <span class="badge-num">청렴</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">공고일 ~ 입찰서 제출 마감일</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">공고일 ~ 낙찰자 공개일까지 (소장 포함)</div>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="compare-row-card">
+        <div class="compare-topic">
+          <span>10. 계약보증금 요율 통일</span>
+          <span class="badge-num">보증</span>
+        </div>
+        <div class="compare-flow">
+          <div class="flow-old">용역 10% / 공사 20%</div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-new">일률 계약금액의 10% 이상 통일</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 탭 3: 승강기 품질 사수 -->
+  <div id="tab-quality" class="tab-content">
+    <div class="alert-box" style="border-color: #81C784; background-color: #F1F8E9;">
+      <div class="alert-icon">🛡️</div>
+      <div class="alert-content">
+        <h4 style="color: #1B4D2E;">경쟁입찰 전환 시 '승강기 품질 사수' 전략</h4>
+        <p>단순 최저가 덤핑 시 <strong>부품 단종 핑계·갇힘 사고 방치·출동 지연</strong>이 발생합니다. 공고 시방서와 적격심사 배점으로 전문 업체를 유치해야 합니다.</p>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <div class="card-header-row">
+        <span>⚙️</span>
+        <span class="card-header-title">공고 시방서 & 배점표 3대 필수 요건</span>
+      </div>
+      <div class="check-list-group">
+        <div class="check-row">
+          <span class="check-icon-badge">1️⃣</span>
+          <div>
+            <strong>제조사 순정부품 100% 적기 공급 확약:</strong><br>
+            <span style="font-size:11px; color:#616161;">비순정·중고 재생부품 사용을 차단하고 고장 시 즉시 부품 수급 확약서 제출 의무화</span>
+          </div>
+        </div>
+        <div class="check-row">
+          <span class="check-icon-badge">2️⃣</span>
+          <div>
+            <strong>24시간 원격 IoT 실시간 관제 시스템:</strong><br>
+            <span style="font-size:11px; color:#616161;">부품 마모 사전 예측 및 갇힘 사고 발생 시 119·엔지니어 자동 연계 출동 인프라 확인</span>
+          </div>
+        </div>
+        <div class="check-row">
+          <span class="check-icon-badge">3️⃣</span>
+          <div>
+            <strong>본사 직영 전문 엔지니어 유지보수:</strong><br>
+            <span style="font-size:11px; color:#616161;">재하도급 위탁을 배제하고 고난도 기술 인력 및 직영 긴급 출동망 보유 여부 배점 반영</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 탭 4: 관리소장 체크리스트 -->
+  <div id="tab-checklist" class="tab-content">
+    <div class="dash-card">
+      <div class="card-header-row">
+        <span>📋</span>
+        <span class="card-header-title">시행 전 필수 실무 점검표 (터치하여 체크)</span>
+      </div>
+      <div class="check-list-group">
+        <div class="interactive-check-item" onclick="toggleCheck(this)">
+          <div class="custom-checkbox"></div>
+          <div class="check-text"><strong>입찰 캘린더 수립:</strong> 2027. 1. 1. 이후 만료되는 용역(승강기·보험 등) 전수조사 및 45일 전 공고 계획 확정</div>
+        </div>
+        <div class="interactive-check-item" onclick="toggleCheck(this)">
+          <div class="custom-checkbox"></div>
+          <div class="check-text"><strong>관리규약 선제 개정:</strong> 적격심사 평가위원(5인 이상) 및 긴급 수의계약 선조치 절차 시·도 준칙 개정 후 반영</div>
+        </div>
+        <div class="interactive-check-item" onclick="toggleCheck(this)">
+          <div class="custom-checkbox"></div>
+          <div class="check-text"><strong>입찰공고문 서식 정비:</strong> 가격 산출방법(부가세 포함 여부, 월액 계산식), 보증금(10%) 예치율 공고문 명시</div>
+        </div>
+        <div class="interactive-check-item" onclick="toggleCheck(this)">
+          <div class="custom-checkbox"></div>
+          <div class="check-text"><strong>제출서류 접수대장 신설:</strong> 11개 항목 수령일시·확인자 기록 (접수 후 사후 보완 일체 금지)</div>
+        </div>
+        <div class="interactive-check-item" onclick="toggleCheck(this)">
+          <div class="custom-checkbox"></div>
+          <div class="check-text"><strong>보증금 관리대장 신설:</strong> 계약 상대자 요청 없이도 목적 달성 시 '즉시 반환' 의무 이행 기록부 구비</div>
+        </div>
+        <div class="interactive-check-item" onclick="toggleCheck(this)">
+          <div class="custom-checkbox"></div>
+          <div class="check-text"><strong>청렴 관리 서약서:</strong> 입찰공고일부터 '낙찰자 공개일'까지 관리소 전 직원 금품·식사 접대 수수 금지 선언</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 하단 고정 액션바 -->
+  <div class="bottom-bar">
+    <button class="btn-print-action" onclick="printDoc()">
+      <span>🖨️</span> A4 인쇄
+    </button>
+    <button class="btn-consult-action" onclick="copyAgendaText()">
+      <span>📑</span> 입대의 안건 복사
+    </button>
+  </div>
+
+  <!-- 토스트 알림 팝업 -->
+  <div id="toast" class="toast">복사되었습니다!</div>
+</div>
+
+<!-- =========================================================
+     2. ★ A4 세로 1장 완벽 출력 전용 레이아웃 (#print-area)
+========================================================== -->
+<div id="print-area">
+  <!-- 인쇄 헤더 -->
+  <div class="p-header">
+    <div class="p-header-left">
+      <div class="p-badge">단지 실무 참고자료</div>
+      <h1>「사업자 선정지침」 전면개정 핵심 요약 & 실무 가이드</h1>
+      <p>국토교통부 고시 전부개정안 | 입주자대표회의 동대표 및 관리사무소장 필독</p>
+    </div>
+    <div class="p-header-right">
+      2027. 1. 1. 시행<br>
+      <span style="font-weight: normal; font-size: 7pt; opacity: 0.9;">(행정예고 완료)</span>
+    </div>
+  </div>
+
+  <!-- 슬로건 -->
+  <div class="p-slogan">
+    💡 <strong>핵심 본질:</strong> 수의계약 대폭 축소로 <strong>경쟁입찰 전면 의무화</strong>! 서류 징구 및 입찰보증금 수납 확인 등 실무상 <strong>법적 책임은 발주처(소장·입대의)</strong>로 귀속됩니다.
+  </div>
+
+  <!-- 1. 신·구 핵심 룰 10대 변화 요약 -->
+  <div class="p-sec-head">1. 한눈에 보는 선정지침 주요 10대 변화</div>
+  <div class="p-grid-2">
+    <div class="p-box">
+      <div class="p-box-title">① 수의계약 대상 대폭 축소 (별표3)</div>
+      <div class="p-chip">
+        <span class="p-chip-old">기존 11개 항목</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">6개 축소 (공산품·보험 제외)</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">② 소액 수의계약 간소화 (500만 이하)</div>
+      <div class="p-chip">
+        <span class="p-chip-old">견적서 2인 필수</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">견적 요건 삭제 (분할금지 유지)</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">③ 기존 사업자 재계약 범위 제한</div>
+      <div class="p-chip">
+        <span class="p-chip-old">공사 외 용역 대부분 가능</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">경비·청소 2종만 가능 (승강기 불가)</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">④ 경쟁입찰 종류 단순화</div>
+      <div class="p-chip">
+        <span class="p-chip-old">일반 / 제한 / 지명경쟁</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">지명경쟁 전면 폐지 (일반·제한만)</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">⑤ 입찰 성립요건 일률 완화</div>
+      <div class="p-chip">
+        <span class="p-chip-old">일반 2인 / 제한 3인 이상</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">모든 경쟁입찰 일률 2인 이상 성립</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">⑥ 입찰가격 상한 공고 간소화</div>
+      <div class="p-chip">
+        <span class="p-chip-old">3개 견적 및 외부자문 필수</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">사업계획·예산 수립 + 입대의 의결</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">⑦ 입찰가격 산출방법 공고 직접 명시</div>
+      <div class="p-chip">
+        <span class="p-chip-old">지침 내 제20조 등 조항 적용</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">조문 삭제 → 공고문에 직접 구체적 기재</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">⑧ 제출서류·보증금 법적 책임 주체 전환</div>
+      <div class="p-chip">
+        <span class="p-chip-old">입찰자가 제출·납부</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">발주처가 직접 징구·확인 의무 (과실 책임)</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">⑨ 금품 부정행위 단속 기준일 연장</div>
+      <div class="p-chip">
+        <span class="p-chip-old">입찰서 마감일시까지</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">낙찰자 공개일까지 (소장 포함)</span>
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">⑩ 계약보증금 요율 기준 통일</div>
+      <div class="p-chip">
+        <span class="p-chip-old">용역 10% / 공사 20%</span>
+        <span class="p-chip-arrow">➔</span>
+        <span class="p-chip-new">계약금액의 일률 10% 이상 수납</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 승강기 등 핵심시설 품질 사수 -->
+  <div class="p-sec-head">2. 승강기 등 핵심 안전시설 품질 사수 3대 기준</div>
+  <div class="p-quality-box">
+    <ul class="p-quality-list">
+      <li class="p-quality-item">
+        <span class="p-quality-icon">✔</span>
+        <div class="p-quality-text"><strong>제조사 순정부품 100% 적기 공급 확약:</strong> 시방서에 순정부품 및 수급 확약 제출 의무화 (재생·임의 개조 부품 원천 배제)</div>
+      </li>
+      <li class="p-quality-item">
+        <span class="p-quality-icon">✔</span>
+        <div class="p-quality-text"><strong>24시간 실시간 IoT 원격 관제 인프라 검증:</strong> 센서 예측 진단 탑재 및 오작동·갇힘 발생 시 본사 직접 119·엔지니어 자동 연계 출동</div>
+      </li>
+      <li class="p-quality-item">
+        <span class="p-quality-icon">✔</span>
+        <div class="p-quality-text"><strong>본사 직영 전문 인력 유지보수:</strong> 무분별한 재하도급을 지양하고 긴급 부품망 및 전문 장비를 보유한 기술 인력 중심 적격심사 배점</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 3. 관리소장 실무 대응 체크리스트 -->
+  <div class="p-sec-head">3. 관리소장 실무 대응 4대 체크리스트</div>
+  <div class="p-grid-2">
+    <div class="p-box">
+      <div class="p-box-title">📅 [일정] 입찰 캘린더 정비</div>
+      <div class="p-desc-text">
+        - '27.1.1. 만료 용역 전수조사 실시<br>
+        - 만료일 기준 최소 45일 전 공고 계획 승인
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">📜 [규약] 단지 관리규약 개정</div>
+      <div class="p-desc-text">
+        - 시·도 준칙 개정 확인 후 신속 입대의 의결<br>
+        - 적격심사 평가위원 풀(5인 이상) 규정 마련
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">📝 [공고] 가격 산출·보증금 서식화</div>
+      <div class="p-desc-text">
+        - 월액 계산식 및 부가세 부과 조건 공고화<br>
+        - 보증금 예치율(10%) 및 하자보증서 징구 양식화
+      </div>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">🛡️ [방어] 의무 대장 장부 신설</div>
+      <div class="p-desc-text">
+        - 11종 제출서류 접수대장 (접수 후 보완 금지)<br>
+        - 보증금 반환대장 / 청렴 이행 서약서 구비
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="p-footer">
+    <span>공동주택관리법령 및 국토교통부 고시 전부개정안 기준</span>
+    <span>A4 세로 1장 인쇄 최적화 포맷 | 공동주택 실무 교육용 자료</span>
+  </div>
+</div>
+
+<script>
+  // 탭 전환
+  function switchTab(tabId, element) {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+    element.classList.add('active');
+    document.getElementById('tab-' + tabId).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // 체크리스트 터치 완료 토글
+  function toggleCheck(element) {
+    element.classList.toggle('done');
+  }
+
+  // 토스트 알림 표시
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.innerText = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2000);
+  }
+
+  // 3줄 요약 클립보드 복사
+  function copySummaryText() {
+    const text = "【사업자 선정지침 전면개정 핵심 3줄 요약】\n" +
+                 "1. 수의계약 대폭 축소: 경비·청소 외 승강기·보험 등 전 용역 경쟁입찰 의무화\n" +
+                 "2. 발주처 책임 강화: 서류 징구·보증금 수납·무효 검토 책임이 입대의·관리소장으로 이전\n" +
+                 "3. 품질 사수 대책: 단순 최저가 방지를 위해 순정부품 확약 및 24시간 원격관제 배점 필수 반영";
+    navigator.clipboard.writeText(text).then(() => {
+      showToast("📋 3줄 요약이 복사되었습니다!");
+    }).catch(() => {
+      showToast("복사 권한을 확인해주세요.");
+    });
+  }
+
+  // 입대의 회의 안건 문안 클립보드 복사
+  function copyAgendaText() {
+    const text = "【입주자대표회의 정기회의 부의 안건(예시)】\n" +
+                 "■ 안건명: 공동주택 사업자 선정지침 전부개정에 따른 관리규약 정비 및 승강기 유지관리 경쟁입찰 방안 의결의 건\n" +
+                 "■ 제안이유: 2027. 1. 1. 전부개정에 따라 승강기 등 주요 용역 수의계약이 금지되고 발주처 서류검토 책임이 강화됨에 따라, 단지 안전 확보를 위한 적격심사 세부기준 및 입찰 캘린더를 선제 수립하고자 함.\n" +
+                 "■ 주요내용:\n" +
+                 "  1. 2027년 만료 용역 역산 입찰 캘린더 승인\n" +
+                 "  2. 승강기 시방서 내 정품부품 확약 및 24시간 원격 IoT 관제 명시\n" +
+                 "  3. 관리소장 서류접수 체크리스트 및 보증금 관리대장 도입 보고";
+    navigator.clipboard.writeText(text).then(() => {
+      showToast("📑 회의 안건 문안이 복사되었습니다!");
+    }).catch(() => {
+      showToast("복사 권한을 확인해주세요.");
+    });
+  }
+
+  // A4 세로 1장 인쇄
+  function printDoc() {
+    window.print();
+  }
+</script>
+</body>
+</html>
